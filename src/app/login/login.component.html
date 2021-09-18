@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="text">
+    <h1>Welcome back!</h1>
+    <h3>Please login to your account</h3>
+  </div>
+  <div class="logform">
+    <form [formGroup]="loginForm" #userPost="ngForm" (ngSubmit)="onSubmit(userPost)">
+      <input type="text" placeholder="Username(email)" class="user" formControlName="username">
+      <span *ngIf="errorMsg().username.invalid && errorMsg().username.touched">Please enter email</span>
+      <input type="password" placeholder="Password" class="pass" formControlName="password">
+      <span *ngIf="errorMsg().password.invalid && errorMsg().password.touched">Please enter correct password</span>
+      <div class="subdiv">
+        <input type="checkbox" name="checkbox" class="check">
+        <a for="checkbox" class="label">Remember me</a>
+        <span class="forget">Forgot password</span>
+      </div>
+      <button type="submit" class="btn" >Login</button>
+      <span *ngIf="invalidCre">Invalid Username or password</span>
+    </form>
+  </div>
+  <div class="reg">
+    <a class="reg" routerLink="/register" >Not a member yet? <b>Register</b></a>
+</div>
+  <div class="term">
+    <a>Terms of use. Privacy policy</a>
+  </div>
+</div>

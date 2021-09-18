@@ -1,0 +1,17 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+img{
+    background-image: url("./img.jpg");
+    height: 710px;
+    width: 800px;
+}
+.box{
+    margin-top: 50px auto;
+    padding: 40px;
+}
+.container{
+    display: flex;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="text">
+      <h1>Welcome!</h1>
+      <h3>Create a new account here</h3>
+    <div class="logform">
+      <form [formGroup]="registrationForm" #userPost="ngForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Name" class="user" formControlName="name">
+        <span *ngIf="errorMsg().name.invalid && errorMsg().name.touched">Please enter your Name</span>
+
+        <input type="number" placeholder="Number" class="user" formControlName="number">
+        <span *ngIf="errorMsg().number.invalid && errorMsg().number.touched">Please enter a valid Number</span>
+
+        <input type="email" placeholder="Email" class="user" formControlName="email">
+        <span *ngIf="errorMsg().email.invalid && errorMsg().email.touched">Please enter your Email</span>
+
+        <input type="password" placeholder="Password" class="pass" formControlName="password">
+        <span *ngIf="errorMsg().password.invalid && errorMsg().password.touched">Please enter a valid Password</span>
+
+        <button type="submit" class="btn" [disabled]="userPost.form.invalid">Register</button>
+        <span *ngIf="userPost.form.invalid && userPost.form.touched ">Fill the required fields</span>
+      </form>
+    </div>
+    <div class="reg">
+      <a class="reg" routerLink="/" routerLinkActive="active">Already a member? <b>Login</b></a>
+  </div>
+    <div class="term">
+      <p>Terms of use. Privacy policy</p>
+    </div>
+  </div>
